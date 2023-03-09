@@ -10,8 +10,7 @@ def addition():
 
     Prints the result
     """
-    sum = add(a, b)
-    print("{} + {} = {}".format(a, b, sum)
+    print("{} + {} = {}".format(a, b, add(a, b)))
 
 
 if (__name__ == "__main__"):
