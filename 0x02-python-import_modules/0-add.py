@@ -11,7 +11,7 @@ def addition():
     Prints the result
     """
     sum = add(a, b)
-    print(f"{a} + {b} = {sum}")
+    print("{} + {} = {}".format(a, b, sum)
 
 
 if (__name__ == "__main__"):
