@@ -6,5 +6,7 @@ def element_at(my_list, idx):
     idx: index
     """
 
-    if ((idx > 0) and (idx < len(my_list))):
-        return (my_list[idx])
+    if ((idx < 0) and (idx >= len(my_list))):
+        return
+
+    return (my_list[idx])
