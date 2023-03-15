@@ -3,4 +3,4 @@
 def common_elements(set_1, set_2):
     """Returns a set of common elements in the two sets"""
 
-    return (set_1 & set_b)
+    return (set_1 & set_2)
