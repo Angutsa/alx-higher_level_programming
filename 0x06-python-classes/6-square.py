@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Square Module
+"""Square Module used to manipulate a square object
 
 This module contains the class Square used to create and manipulate a square
 
