@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""Square Module
+
+This module contains the class Square used to create and manipulate a square
+
+"""
+
+
 class Square:
     """Defines a class Square"""
     def __init__(self, size=0):
@@ -13,9 +20,9 @@ class Square:
     def size(self, value):
         if type(value) != int:
             raise TypeError("size must be an integer")
-        
+
         if value < 0:
-                raise ValueError("size must be >= 0")
+            raise ValueError("size must be >= 0")
 
         self.__size = value
 
