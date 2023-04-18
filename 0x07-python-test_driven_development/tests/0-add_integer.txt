@@ -1,0 +1,50 @@
+============================================================
+Tests for add_integer function in add_integer.py
+============================================================
+
+
+''add_integer'' should add two integers i.e. 1 + 1 = 2
+
+::
+	>>> import sys
+	>>> sys.path.append('..')
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(2, 3)
+	5
+
+	>>> add_integer(100, 33456)
+	33556
+
+It should also add floating-point numbers and integer
+
+::
+	>>> add_integer(1.1, 2.2)
+	3
+
+If a non-integer or non-float is passed, a TypeError should be raised
+
+::
+	>>> add_integer('tea', 2.2)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+	
+	>>> add_integer(1, ['a','b'])
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+Before adding the numbers, they should first be converted to integers
+This means that 1.1 + 9.9 should not be 11
+
+::
+	>>> add_integer(1.1,9.9)
+	10
+
+The result of ''add_integer'' should always be an integer
+
+::
+	>>> type(add_integer(1, 2)) == int
+	True
+	>>> type(add_integer(1.1, 2)) == int
+	True
+	>>> type(add_integer(1.1, 2.2)) == int
+	True
