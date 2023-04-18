@@ -38,6 +38,9 @@ This means that 1.1 + 9.9 should not be 11
 ::
 	>>> add_integer(1.1,9.9)
 	10
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
 
 The result of ''add_integer'' should always be an integer
 
@@ -49,9 +52,24 @@ The result of ''add_integer'' should always be an integer
 	>>> type(add_integer(1.1, 2.2)) == int
 	True
 
-Where the user does not enter an argument, a TypeError is raised
+Where the user does not enter two arguments, a TypeError is raised
 
 ::
 	>>> add_integer()
 	Traceback (most recent call last):
 	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Where only one argument is supplied, b defaults to 98
+
+::
+	>>> add_integer(2,)
+	100
+	>>> add_integer(2)
+	100
+
+The function does not handle float overflows
+
+::
+	>>> add_integer(0.00000000000000001E3089)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
