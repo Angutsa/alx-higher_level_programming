@@ -18,9 +18,6 @@ def matrix_divided(matrix, div):
     if type(matrix) is not list:
         raise TypeError(not_matrix)
 
-    if len(matrix) < 2:
-        raise TypeError(not_matrix)
-
     for row in matrix:
         if type(row) is not list:
             raise TypeError(not_matrix)
@@ -43,11 +40,7 @@ def matrix_divided(matrix, div):
     for row in matrix:
         matrix_div.append([])
         for item in row:
-            quotient = item / div
-            if div == div and item == item and float('inf') not in [div, item]:
-                quotient = int(quotient)
-
-            matrix_div[index].append(quotient)
+            matrix_div[index].append(item / div)
         index += 1
 
     return matrix_div

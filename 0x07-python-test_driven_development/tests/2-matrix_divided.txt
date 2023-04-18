@@ -68,10 +68,6 @@ if any value in the matrix is NaN or inf, divide anyway
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	
-	>>> matrix_divided([2],2)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	
 	>>> matrix_divided([[2]],2)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
