@@ -1,0 +1,36 @@
+======================================================================
+Tests for function: say_my_name(first_name, last_name)
+======================================================================
+
+The function prints the full name of the user as supplied
+
+::
+	>>> import sys
+	>>> sys.path.append('..')
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+	>>> say_my_name("Bob", "Smith")
+	My name is Bob Smith
+
+If only one name is given, it prints that name only
+
+::
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+If no name is given, an error is raised
+
+::
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Both the first name and last name must be strings
+
+::
+	>>> say_my_name("Bob", 12)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(12, "Bob")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
