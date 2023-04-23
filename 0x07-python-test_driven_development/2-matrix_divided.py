@@ -6,6 +6,8 @@
 
 
 def matrix_divided(matrix, div):
+    """divides all the elements of the matrix"""
+
     # Validate input
     not_matrix = "matrix must be a matrix (list of lists) of integers/floats"
 
@@ -40,7 +42,11 @@ def matrix_divided(matrix, div):
     for row in matrix:
         matrix_div.append([])
         for item in row:
-            matrix_div[index].append(item / div)
+            quotient = item / div
+            if quotient != float('inf') and quotient == quotient and quotient:
+                quotient = round(quotient, 2)
+
+            matrix_div[index].append(quotient)
         index += 1
 
     return matrix_div

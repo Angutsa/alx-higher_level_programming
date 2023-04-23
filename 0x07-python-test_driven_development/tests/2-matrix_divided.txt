@@ -10,7 +10,7 @@ by the provided div
 	>>> sys.path.append('..')
 	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 	>>> matrix_divided([[2, 2], [2, 2]], 2)
-	[[1, 1], [1, 1]]
+	[[1.0, 1.0], [1.0, 1.0]]
 
 'div' must be a float or an integer or a TypeError is raised
 
@@ -35,7 +35,7 @@ a NaN or inf i.e. 5/0.0254 != 196 (196.850393)
 	...     [5, 5]
 	... ]
 	>>> matrix_divided(matrix, 0.0254)
-	[[166, 166], [166, 166]]
+	[[166.0, 166.0], [166.0, 166.0]]
 
 if 'div' is inf or NaN, divide anyway
 
@@ -50,10 +50,10 @@ if any value in the matrix is NaN or inf, divide anyway
 
 ::
 	>>> matrix_divided([[2, 2],[2, float('nan')]], 2)
-	[[1, 1], [1, nan]]
+	[[1.0, 1.0], [1.0, nan]]
 
 	>>> matrix_divided([[2, 2],[2, float('inf')]], 2)
-	[[1, 1], [1, inf]]
+	[[1.0, 1.0], [1.0, inf]]
 
 	>>> matrix_divided([[2, 2],[2, float('inf')]], float('nan'))
 	[[nan, nan], [nan, nan]]
