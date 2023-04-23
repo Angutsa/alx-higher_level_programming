@@ -35,7 +35,7 @@ a NaN or inf i.e. 5/0.0254 != 196 (196.850393)
 	...     [5, 5]
 	... ]
 	>>> matrix_divided(matrix, 0.0254)
-	[[166.0, 166.0], [166.0, 166.0]]
+	[[166.67, 166.67], [166.67, 166.67]]
 
 if 'div' is inf or NaN, divide anyway
 
@@ -68,7 +68,7 @@ if any value in the matrix is NaN or inf, divide anyway
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	
-	>>> matrix_divided([[2]],2)
+	>>> matrix_divided([2],2)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
