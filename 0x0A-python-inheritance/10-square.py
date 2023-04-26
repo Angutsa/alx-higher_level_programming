@@ -16,5 +16,8 @@ class Square(Rectangle):
         """
 
         super().__init__(size, size)
-        self.__size = size
-        integer_validator('size', size)
+
+    def integer_validator(self, name, value):
+        """Ensures that size is an integer"""
+
+        super().integer_validator('size', value)
