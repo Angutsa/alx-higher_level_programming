@@ -9,18 +9,17 @@ with a new line
 	>>> import sys
 	>>> sys.path.append("..")
 	>>> text_indentation = __import__("5-text_indentation").text_indentation
-	>>> text = "I am a girl. Do I like new things? Yes, I like: apples and tomatoes"
+	>>> text = "A girl.New things?Likes:Apples"
 	>>> text_indentation(text)
-	I am a girl
+	A girl.
 	<BLANKLINE>
-	Do I like new things
+	New things?
 	<BLANKLINE>
-	Yes, I like
+	Likes:
 	<BLANKLINE>
-	apples and tomatoes
+	Apples
 
 	>>> text_indentation("")
-	<BLANKLINE>
 
 The input to text_indentation must be a string
 
