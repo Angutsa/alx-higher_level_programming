@@ -1,0 +1,46 @@
+================================================================
+Tests for function: text_indentation(text)
+==============================================================================
+
+Function prints out a new text that replaces the characters ":", "?" and "."
+with a new line
+
+::
+	>>> import sys
+	>>> sys.path.append("..")
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+	>>> text = "I am a girl. Do I like new things? Yes, I like: apples and tomatoes"
+	>>> text_indentation(text)
+	I am a girl
+	<BLANKLINE>
+	Do I like new things
+	<BLANKLINE>
+	Yes, I like
+	<BLANKLINE>
+	apples and tomatoes
+
+	>>> text_indentation("")
+	<BLANKLINE>
+
+The input to text_indentation must be a string
+
+::
+	>>> text_indentation(1)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation([1])
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation({1: "ert"})
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation(True)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
