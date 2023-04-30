@@ -104,7 +104,13 @@ class Rectangle(Base):
         """prints the rectangle to stdout using #
         """
 
+        for line in range(self.__y):
+            print("")
+
         for row in range(self.__height):
+            for i in range(self.__x):
+                print(" ", end="")
+
             for item in range(self.__width):
                 print("#", end="")
 

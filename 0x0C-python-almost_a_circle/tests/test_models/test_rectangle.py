@@ -74,19 +74,27 @@ class TestRectangleClass(unittest.TestCase):
 
         self.assertEqual(my_rect.area(), 6)
 
-    @patch('sys.stdout', new_callable = StringIO)
+    @patch('sys.stdout', new_callable=StringIO)
     def test_display_method(self, stdout):
-        """Tests that the correct rectangle is displayed
+        """Tests that the rectangle is correctly positioned with x and y values
+        """
+
+        expected = "\n\n\n  ###\n  ###\n  ###\n  ###\n"
+        my_rect = Rectangle(3, 4, 2, 3)
+        my_rect.display()
+        self.assertEqual(stdout.getvalue(), expected)
+
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_display_method_no_xy(self, stdout):
+        """Tests that the correct rectangle is displayed without x and y
         """
 
         expected = "###\n###\n###\n###\n"
-
         my_rect = Rectangle(3, 4)
         my_rect.display()
         self.assertEqual(stdout.getvalue(), expected)
 
-
-    @patch('sys.stdout', new_callable = StringIO)
+    @patch('sys.stdout', new_callable=StringIO)
     def test_print_output(self, stdout):
         """Tests that the correct output is produced by __str__
         """
