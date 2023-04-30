@@ -107,3 +107,26 @@ class TestRectangleClass(unittest.TestCase):
 
         str(my_rect)
         self.assertEqual(stdout.getvalue(), expected)
+
+    def test_update_method(self):
+        """Tests that update correctly assigns the arguments passed
+        """
+
+        my_rect = Rectangle(3, 4, 1, 2, 3)
+        my_rect.update(89)
+        self.assertEqual(my_rect.id, 89)
+
+        my_rect.update(89, 2)
+        self.assertEqual(my_rect.width, 2)
+
+        my_rect.update(89, 2, 3)
+        self.assertEqual(my_rect.height, 3)
+
+        my_rect.update(89, 2, 3, 4)
+        self.assertEqual(my_rect.x, 4)
+
+        my_rect.update(89, 2, 3, 4, 5)
+        self.assertEqual(my_rect.y, 5)
+
+        my_rect.update(75, 10, 10, 5, 7)
+        self.assertEqual(my_rect.__str__(), "[Rectangle] (75) 5/7 - 10/10")
