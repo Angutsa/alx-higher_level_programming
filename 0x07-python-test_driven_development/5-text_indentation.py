@@ -21,7 +21,7 @@ def text_indentation(text):
             new_text = new_text + letter
 
     if new_text[-2:] == "\n ":
-        new_text = new_text[0:-1]
+        new_text = new_text[0:-2]
 
     new_text = new_text.replace("\n\n ", "\n\n")
 
