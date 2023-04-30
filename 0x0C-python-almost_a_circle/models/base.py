@@ -25,3 +25,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def __del__(self):
+        """Class destructor
+        """
+
+        Base.__nb_objects -= 1
