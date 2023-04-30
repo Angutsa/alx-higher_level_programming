@@ -5,9 +5,7 @@
 
 
 import unittest
-import sys
-sys.path.append("/home/angutsa/alx-higher_level_programming/0x0C-python-almost_a_circle/models")
-from base import Base
+from models.base import Base
 
 class TestBaseClass(unittest.TestCase):
     def test_initialisation(self):

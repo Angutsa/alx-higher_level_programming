@@ -5,10 +5,8 @@
 
 
 import unittest
-import sys
-sys.path.append("/home/angutsa/alx-higher_level_programming/0x0C-python-almost_a_circle/models")
-from rectangle import Rectangle
-from base import Base
+from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangleClass(unittest.TestCase):
