@@ -89,4 +89,13 @@ class Rectangle(Base):
         self.__y = y
 
     def __del__(self):
+        """Class deconstructor
+        """
+
         super().__del__()
+
+    def area(self):
+        """returns the area value of the Rectangle instance
+        """
+
+        return self.__width * self.__height

@@ -63,3 +63,11 @@ class TestRectangleClass(unittest.TestCase):
         """
 
         self.assertIs(issubclass(Rectangle, Base), True)
+
+    def test_area_method(self):
+        """Tests that the area method works correctly
+        """
+
+        my_rect = Rectangle(2, 3, 1, 1)
+
+        self.assertEqual(my_rect.area(), 6)
