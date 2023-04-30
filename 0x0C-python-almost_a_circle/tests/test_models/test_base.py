@@ -7,7 +7,11 @@
 import unittest
 from models.base import Base
 
+
 class TestBaseClass(unittest.TestCase):
+    """Tests the Base Class
+    """
+
     def test_initialisation(self):
         """tests the instantiation of Base Class Objects
         """

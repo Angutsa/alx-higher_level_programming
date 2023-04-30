@@ -10,6 +10,9 @@ from models.base import Base
 
 
 class TestRectangleClass(unittest.TestCase):
+    """Tests the Rectangle Class
+    """
+
     def test_initialisation(self):
         """tests the instantiation of Rectangle Class Objects
         """
@@ -33,10 +36,14 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             my_rect = Rectangle("me", 2)
             my_rect = Rectangle(2, "me")
+            my_rect = Rectangle(2, 2, "me", 2)
+            my_rect = Rectangle(2, 2, 2, "me")
 
         with self.assertRaises(ValueError):
             my_rect = Rectangle(-1, 2)
             my_rect = Rectangle(1, -2)
+            my_rect = Rectangle(1, 2, -1, 1)
+            my_rect = Rectangle(1, 2, 1, -1)
 
     def test_encapsulation(self):
         """tests that the correct variables are private and public
