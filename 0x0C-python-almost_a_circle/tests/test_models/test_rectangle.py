@@ -130,3 +130,17 @@ class TestRectangleClass(unittest.TestCase):
 
         my_rect.update(75, 10, 10, 5, 7)
         self.assertEqual(my_rect.__str__(), "[Rectangle] (75) 5/7 - 10/10")
+
+        my_rect.update(height=1)
+        self.assertEqual(my_rect.height, 1)
+
+        my_rect.update(x=1, height=3, y=2)
+        self.assertEqual(my_rect.x, 1)
+        self.assertEqual(my_rect.height, 3)
+        self.assertEqual(my_rect.y, 2)
+        self.assertEqual(my_rect.width, 10)
+
+        args = (10, 10, 10, 10, 10)
+        kwargs = {"height": 16, "x": 20}
+        my_rect.update(*args, kwargs)
+        self.assertEqual(my_rect.__str__(), "[Rectangle] (10) 10/10 - 10/10")

@@ -124,9 +124,26 @@ class Rectangle(Base):
                                                        self.__y, self.__width,
                                                        self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates the instance attributes
+
+        function will skip over **kwargs if *args exists and is not empty
         """
+
+        if len(args) <= 0:
+            for key, value in kwargs.items():
+                if key == "width":
+                    self.width = kwargs["width"]
+                elif key == "height":
+                    self.height = kwargs["height"]
+                elif key == "id":
+                    self.id = kwargs["id"]
+                elif key == "x":
+                    self.x = kwargs["x"]
+                elif key == "y":
+                    self.y = kwargs["y"]
+
+            return
 
         if len(args) > 0:
             self.id = args[0]
