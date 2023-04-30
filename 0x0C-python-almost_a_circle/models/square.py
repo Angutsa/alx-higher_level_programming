@@ -3,6 +3,8 @@
 """Contains the Square Class
 """
 
+from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """Defines a square
