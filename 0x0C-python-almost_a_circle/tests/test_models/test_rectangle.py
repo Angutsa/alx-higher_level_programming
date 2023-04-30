@@ -5,6 +5,8 @@
 
 
 import unittest
+from unittest.mock import patch
+from io import StringIO
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -71,3 +73,17 @@ class TestRectangleClass(unittest.TestCase):
         my_rect = Rectangle(2, 3, 1, 1)
 
         self.assertEqual(my_rect.area(), 6)
+
+    @patch('sys.stdout', new_callable = StringIO)
+    def test_display_method(self, stdout):
+        """Tests that the correct rectangle is displayed
+        """
+
+        expected = "###\n###\n###\n###\n"
+
+        my_rect = Rectangle(3, 4)
+        my_rect.display()
+
+        self.assertEqual(stdout.getvalue(), expected)
+
+

@@ -99,3 +99,13 @@ class Rectangle(Base):
         """
 
         return self.__width * self.__height
+
+    def display(self):
+        """prints the rectangle to stdout using #
+        """
+
+        for row in range(self.__height):
+            for item in range(self.__width):
+                print("#", end="")
+
+            print()
