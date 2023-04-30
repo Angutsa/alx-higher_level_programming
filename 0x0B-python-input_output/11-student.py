@@ -52,4 +52,5 @@ class Student:
             json (dict): attributes to replace with
         """
 
-        self.__dict__ = json
+        if len(json) != 0:
+            self.__dict__ = json
