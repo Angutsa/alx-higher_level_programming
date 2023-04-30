@@ -83,7 +83,19 @@ class TestRectangleClass(unittest.TestCase):
 
         my_rect = Rectangle(3, 4)
         my_rect.display()
-
         self.assertEqual(stdout.getvalue(), expected)
 
 
+    @patch('sys.stdout', new_callable = StringIO)
+    def test_print_output(self, stdout):
+        """Tests that the correct output is produced by __str__
+        """
+
+        expected = "[Rectangle] (12) 2/1 - 2/3\n"
+
+        my_rect = Rectangle(2, 3, 2, 1, 12)
+        print(my_rect)
+        self.assertEqual(stdout.getvalue(), expected)
+
+        str(my_rect)
+        self.assertEqual(stdout.getvalue(), expected)
