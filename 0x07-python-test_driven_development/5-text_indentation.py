@@ -16,12 +16,9 @@ def text_indentation(text):
     new_text = ""
     for letter in text:
         if letter in [".", "?", ":"]:
-            new_text = new_text + "\n\n"
+            new_text = new_text + "{}\n\n".format(letter)
         else:
             new_text = new_text + letter
-
-        if new_text[-2:] == "\n ":
-            new_text = new_text[0:len(new_text) - 1]
 
     new_text = new_text.replace("\n\n ", "\n\n")
 
