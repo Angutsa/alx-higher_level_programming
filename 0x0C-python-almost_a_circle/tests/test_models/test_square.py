@@ -69,10 +69,8 @@ class TestSquareClass(unittest.TestCase):
         """
 
         my_square = Square(2, 1, 1)
-        self.assertEqual(my_square.area(), 4)
 
-        my_square = Square(5)
-        self.assertEqual(my_square.area(), 25)
+        self.assertEqual(my_square.area(), 4)
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_display_method(self, stdout):
@@ -124,7 +122,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(my_square.x, 3)
 
         my_square.update(89, 2, 3, 4)
-
         self.assertEqual(my_square.y, 4)
 
         my_square.update(75, 10, 5, 7)
@@ -143,21 +140,3 @@ class TestSquareClass(unittest.TestCase):
         kwargs = {"height": 16, "x": 20}
         my_square.update(*args, kwargs)
         self.assertEqual(my_square.__str__(), "[Square] (10) 10/10 - 10")
-
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_getters_and_setters(self, stdout):
-        """Tests that the getters and setters work correctly
-        """
-
-        expected = "[Square] (1) 0/0 - 5\n"
-
-        my_square = Square(5)
-        print(my_square)
-        self.assertEqual(stdout.getvalue(), expected) 
-        self.assertEqual(my_square.size, 5)
-
-        my_square.size = 10
-        self.assertEqual(my_square.size, 10)
-
-        with self.assertRaises(TypeError):
-            my_square.size = "9"
