@@ -50,21 +50,33 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
+        """Setter for the width
+        """
+
         self.validate_width(width)
         self.__width = width
 
     @height.setter
     def height(self, height):
+        """Setter for the height
+        """
+
         self.validate_height(height)
         self.__height = height
 
     @x.setter
     def x(self, x):
+        """Setter for x
+        """
+
         self.validate_x(x)
         self.__x = x
 
     @y.setter
     def y(self, y):
+        """Setter for y
+        """
+
         self.validate_y(y)
         self.__y = y
 
@@ -143,6 +155,9 @@ class Rectangle(Base):
 # Input Validation Methods
 
     def validate_width(self, width):
+        """Ensures width is the correct value
+        """
+
         if type(width) != int:
             raise TypeError("width must be an integer")
 
@@ -150,6 +165,9 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
 
     def validate_height(self, height):
+        """Ensures height is the correct value
+        """
+
         if type(height) != int:
             raise TypeError("height must be an integer")
 
@@ -157,6 +175,9 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
 
     def validate_x(self, x):
+        """Ensures x is the correct value
+        """
+
         if type(x) != int:
             raise TypeError("x must be an integer")
 
@@ -164,6 +185,9 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
 
     def validate_y(self, y):
+        """Ensures y is the correct value
+        """
+
         if type(y) != int:
             raise TypeError("y must be an integer")
 
