@@ -1,4 +1,4 @@
-#!/usr/bin/pythone
+#!/usr/bin/python3
 
 """Contains the Rectangle Class
 """
