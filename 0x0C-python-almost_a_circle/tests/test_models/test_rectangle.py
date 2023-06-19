@@ -34,7 +34,6 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(my_rect2.x, 0)
         self.assertEqual(my_rect2.y, 0)
 
-
         with self.assertRaises(TypeError):
             my_rect = Rectangle()
             my_rect = Rectangle(2)
