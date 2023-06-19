@@ -27,6 +27,14 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(my_rect.x, 0)
         self.assertEqual(my_rect.y, 0)
 
+        my_rect2 = Rectangle(9, 6)
+        self.assertEqual(my_rect2.id, 2)
+        self.assertEqual(my_rect2.height, 6)
+        self.assertEqual(my_rect2.width, 9)
+        self.assertEqual(my_rect2.x, 0)
+        self.assertEqual(my_rect2.y, 0)
+
+
         with self.assertRaises(TypeError):
             my_rect = Rectangle()
             my_rect = Rectangle(2)

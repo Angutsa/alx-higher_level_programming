@@ -20,11 +20,11 @@ class Base:
             id (int): TODO
         """
 
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+        if id is None:
+            Base.__nb_objects = Base.__nb_objects + 1
+            id = Base.__nb_objects
+
+        self.id = id
 
     def __del__(self):
         """Class destructor

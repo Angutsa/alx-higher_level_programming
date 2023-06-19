@@ -97,7 +97,7 @@ class TestSquareClass(unittest.TestCase):
         """Tests that the correct output is produced by __str__
         """
 
-        expected = "[Square] (12) 2/1 - 2/2\n"
+        expected = "[Square] (12) 2/1 - 2\n"
 
         my_square = Square(2, 2, 1, 12)
         print(my_square)
@@ -116,15 +116,16 @@ class TestSquareClass(unittest.TestCase):
 
         my_square.update(89, 2)
         self.assertEqual(my_square.width, 2)
+        self.assertEqual(my_square.height, 2)
 
         my_square.update(89, 2, 3)
-        self.assertEqual(my_square.height, 3)
+        self.assertEqual(my_square.x, 3)
 
         my_square.update(89, 2, 3, 4)
-        self.assertEqual(my_square.x, 4)
+        self.assertEqual(my_square.y, 4)
 
         my_square.update(75, 10, 5, 7)
-        self.assertEqual(my_square.__str__(), "[Square] (75) 5/7 - 10/10")
+        self.assertEqual(my_square.__str__(), "[Square] (75) 5/7 - 10")
 
         my_square.update(height=1)
         self.assertEqual(my_square.height, 1)
@@ -138,4 +139,4 @@ class TestSquareClass(unittest.TestCase):
         args = (10, 10, 10, 10)
         kwargs = {"height": 16, "x": 20}
         my_square.update(*args, kwargs)
-        self.assertEqual(my_square.__str__(), "[Square] (10) 10/10 - 10/10")
+        self.assertEqual(my_square.__str__(), "[Square] (10) 10/10 - 10")
